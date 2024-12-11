@@ -1,6 +1,7 @@
-/dataset
-/AI*
+dataset/
+AI*/
 DS_*
 *.log
-/.venv
+.venv/
 .DS_Store
+logs/

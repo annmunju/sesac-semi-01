@@ -1,4 +1,4 @@
-version: '3.8'
+version: '1.0'
 
 services:
   backend:
@@ -22,8 +22,6 @@ services:
       - ../logs:/app/frontend/logs
     networks:
       - app-network
-    # environment:
-    #   BACKEND_IP: "backend"  # backend의 서비스 이름을 환경변수로 설정
 
 networks:
   app-network:
