@@ -4,10 +4,9 @@
 > 서버 아키텍처 구축 프로젝트 01 - psudo version
 
 ## 실행
-`sh start_api.sh`
-- 백그라운드 실행 `nohup sh start_api.sh > api.log &`
+`sh start_api.sh` (백그라운드 실행)
 
 [참고] 백그라운드 프로세스 찾기 및 중단 
-1. ps -fu {유저이름:root} | grep {검색어:start_demo}
+1. ps -fe | grep {검색어:start_api}
 2. 해당 프로세스 번호 pid 를 찾기
 3. kill {pid} (강제종료 kill -9 {pid})
