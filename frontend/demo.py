@@ -3,7 +3,7 @@ import requests
 import argparse
 import logging
 from datetime import datetime
-from __config__ import SIDO_LIST, set_front_url
+from __config__ import SIDO_LIST, set_backend_url
 
 # 로그 설정
 logging.basicConfig(
@@ -14,11 +14,11 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 parser = argparse.ArgumentParser(description='여행지 추천 데모 애플리케이션')
-parser.add_argument('front_host', type=str, help='프론트엔드 호스트 IP')
-parser.add_argument('front_port', type=int, help='프론트엔드 포트 번호')
+parser.add_argument('backend_host', type=str, help='백엔드 호스트 IP')
+parser.add_argument('backend_port', type=int, help='백엔드 포트 번호')
 
 args = parser.parse_args()
-FRONT_URL = set_front_url(args.front_host, args.front_port)
+BACKEND_URL = set_backend_url(args.backend_host, args.backend_port)
 
 # 페이지 로드 시간 로깅
 logger.info(f"페이지 로드 시작: {datetime.now()}")
@@ -60,6 +60,6 @@ rec_img_con, rec_result_con = output_container.columns([3, 7])
 if rec_btn:
     logger.info(f"추천 버튼 클릭 시간: {datetime.now()}")
     output_container.markdown("### 추천 결과")
-    data = requests.get(f"{FRONT_URL}{sido}").json()
+    data = requests.get(f"{BACKEND_URL}{sido}").json()
     output_container.dataframe(data)
     logger.info(f"추천 결과 로드 완료 시간: {datetime.now()}")
