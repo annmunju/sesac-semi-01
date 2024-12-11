@@ -5,12 +5,14 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y curl tar
 
 RUN curl -L -O https://github.com/annmunju/sesac-semi-01/raw/refs/heads/main/backend.tar
-RUN mkdir -p /app/backend && tar -xvf backend.tar -C /app/backend
+RUN tar -xvf backend.tar
 
 WORKDIR /app/backend
 
 VOLUME ["/app/backend/logs"]
 
 EXPOSE 8888
+
+RUN chmod +x start_api.sh
 
 CMD ["bash", "start_api.sh"]

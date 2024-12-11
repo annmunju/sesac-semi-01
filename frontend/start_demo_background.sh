@@ -15,5 +15,6 @@ mkdir -p "$log_dir"
 timestamp=$(date +"%Y%m%d_%H%M%S")
 log_file="$log_dir/demo_$timestamp.log"
 
+# nohup 명령어에서 로그 파일 경로 수정
+echo "test@test.com" | nohup streamlit run demo.py 0.0.0.0 8888 --server.address 0.0.0.0 --server.port 8080 > "$log_file" &
 echo "----- RUN demo -----"
-echo "test@test.com" | streamlit run demo.py 0.0.0.0 8888 --server.address 0.0.0.0 --server.port 8080 > "$log_file" &

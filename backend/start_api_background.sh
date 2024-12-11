@@ -17,5 +17,6 @@ mkdir -p "$log_dir"
 timestamp=$(date +"%Y%m%d_%H%M%S")
 log_file="$log_dir/model_$timestamp.log"
 
+# nohup 명령어에서 로그 파일 경로 수정
+nohup python3 model_api.py --host 0.0.0.0 --port 8888 > "$log_file" &
 echo "----- RUN model -----"
-python3 model_api.py --host 0.0.0.0 --port 8888 > "$log_file" &

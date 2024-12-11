@@ -13,4 +13,6 @@ VOLUME ["/app/frontend/logs"]
 
 EXPOSE 8080
 
+RUN chmod +x start_demo.sh
+
 CMD ["bash", "start_demo.sh"]
