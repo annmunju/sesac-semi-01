@@ -1,10 +1,10 @@
 #! /bin/bash
 
-apt update 
-apt install -y python3 && apt install -y python3-pip
-new_path = "export PATH\"\$PATH:/usr/bin\""
-echo "$new_path" >> ~/.bashrc
-source ~/.bashrc
+# apt update 
+# apt install -y python3 && apt install -y python3-pip
+# new_path = "export PATH\"\$PATH:/usr/bin\""
+# echo "$new_path" >> ~/.bashrc
+# source ~/.bashrc
 pip install pandas==2.2.3
 pip install fastapi==0.115
 pip install uvicorn==0.32
