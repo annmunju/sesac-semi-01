@@ -7,7 +7,7 @@ from __config__ import SIDO_LIST, set_front_url
 
 # 로그 설정
 logging.basicConfig(
-    filename='demo.log',
+    filename='logs/demo.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )

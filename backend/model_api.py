@@ -10,7 +10,7 @@ from datetime import datetime
 
 # 로그 설정
 logging.basicConfig(
-    filename='demo.log',
+    filename='logs/api.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
