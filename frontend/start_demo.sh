@@ -12,4 +12,4 @@ log_dir="logs"
 mkdir -p "$log_dir"
 
 echo "----- RUN demo -----"
-streamlit run demo.py 0.0.0.0 8888 --server.address 0.0.0.0 --server.port 8080
+streamlit run demo.py backend 8888 --server.address 0.0.0.0 --server.port 8080

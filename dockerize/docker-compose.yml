@@ -9,6 +9,8 @@ services:
       - "8888:8888"  # 호스트 포트:컨테이너 포트
     volumes:
       - ../logs:/app/backend/logs
+    networks:
+      - app-network
 
   frontend:
     build:
@@ -17,4 +19,12 @@ services:
     ports:
       - "8080:8080"  # 호스트 포트:컨테이너 포트
     volumes:
-      - ../logs:/app/frontend/logs 
+      - ../logs:/app/frontend/logs
+    networks:
+      - app-network
+    # environment:
+    #   BACKEND_IP: "backend"  # backend의 서비스 이름을 환경변수로 설정
+
+networks:
+  app-network:
+    driver: bridge
