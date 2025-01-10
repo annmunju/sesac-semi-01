@@ -1,7 +1,6 @@
 dataset/
 AI*/
 DS_*
-*.log
 .venv/
 .DS_Store
-logs/
+archive/
